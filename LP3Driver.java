@@ -107,8 +107,9 @@ public class LP3Driver {
 		}
 		System.out.println(total);
 		System.out.println(timer.end());
+		
 	}
-
+	
 	public static class Timer {
 		long startTime, endTime, elapsedTime, memAvailable, memUsed;
 
