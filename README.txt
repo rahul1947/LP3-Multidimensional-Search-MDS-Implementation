@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Long Project LP3: Multidimensional search (MDS) Implementation
 
 # Team: LP101 
@@ -10,6 +11,7 @@
 ___________________________________________________________________________
 
 # DESCRIPTION: 
+
 1. For each product/ item, we've made a class called Item consisting - 
    class Item { Long id, Money price, HashSet<Long> description }
    Why HashSet - to avoid duplicates and fast modifications
@@ -33,7 +35,6 @@ ___________________________________________________________________________
 4. Note that, each Item is stored only in TreeMap (pTree). HashMap (dMap)
    contains only the references of the Items which are mapped by the 
    descriptions.
-
 ___________________________________________________________________________
 
 # RESULTS: 
@@ -92,6 +93,7 @@ ___________________________________________________________________________
 ___________________________________________________________________________
 
 # DEBUGGING:
+
 1. Version 1: 402, 404, 407 were giving incorrect results.
    
    Need to correct logic for priceHike() findMaxPrice() and findMinPrice()
@@ -107,6 +109,11 @@ ___________________________________________________________________________
 3. Version 3: correct results for all given inputs, but took long to run
    
    Optimized by changing from TreeSet to HashSet. 
+   toString() in Money didnt considered single digit cent values.
+
+3. Version 3: correct results for all given inputs, but took long to run
+   
+   Optimised by changing from TreeSet to HashSet. 
    As we were unsure of Items in Hash stored as references, we used to 
    redundantly update the same Item with a helper method.
    Used subMap() for priceHike().
