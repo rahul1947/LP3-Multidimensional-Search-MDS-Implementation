@@ -1,25 +1,15 @@
+# Long Project LP3: Multidimensional search (MDS) Implementation
+
+# Team: LP101 
+ * Rahul Nalawade (rsn170330)
+ * Prateek Sarna (pxs180012)
+ * Bhavish Khanna Narayanan (bxn170002)
+
+# End Date: 
+ * Sunday, November 04, 2018
 ___________________________________________________________________________
 
-/**
- * CS 5V81.001: Implementation of Data Structures and Algorithms 
- * Long Project LP3: Multidimensional search (MDS) Implementation
- * Team: LP101
- * @author Rahul Nalawade (rsn170330)
- * @author Prateek Sarna (pxs180012)
- * @author Bhavish Khanna Narayanan (bxn170002)
- * 
- */
-
-1. Extract the rsn170330.zip 
-
-2. Compile: 
-	$javac rsn170330/*.java
-
-3. Run: 
-	$java rsn170330.LP3Driver lp3-inputs/420.txt
-
----------------------------------------------------------------------------
-DESCRIPTION: 
+# DESCRIPTION: 
 1. For each product/ item, we've made a class called Item consisting - 
    class Item { Long id, Money price, HashSet<Long> description }
    Why HashSet - to avoid duplicates and fast modifications
@@ -44,8 +34,9 @@ DESCRIPTION:
    contains only the references of the Items which are mapped by the 
    descriptions.
 
----------------------------------------------------------------------------
-RESULTS: 
+___________________________________________________________________________
+
+# RESULTS: 
 
 +-------------------------------------------------------------------------+
 | File         | Output          |   Time (mSec)     | Memory (used/avail)|
@@ -76,16 +67,31 @@ RESULTS:
 +-------------------------------------------------------------------------+
 
 NOTE: 
-- Time and Memory might change, as you run the test the program on a 
-  different system, but they could be comparable to the above values.
-
+- Time and Memory might change, as you run the test the program on a different 
+  system, but they could be comparable to the above values.
+  
+  Existing Processor: Intel® Core™ i5-8250U CPU @ 1.60GHz × 8
+  Memory: 7.5 GiB
+  
 - A screenshot has been included for reference for the above table.
 
 - You might need to allocate sufficient memory for the test programs 
-  like lp3-big-500k.txt, we allocated 4 GBs for the run.
+  like for lp3-big-500k.txt, we allocated 4 GBs for the run.
 
----------------------------------------------------------------------------
-DEBUGGING:
+___________________________________________________________________________
+
+# How to Run:
+
+1. Extract the rsn170330.zip 
+
+2. Compile: 
+	$javac rsn170330/*.java
+
+3. Run: 
+	$java -Xss512m -Xms4g rsn170330.LP3Driver test-lp3/lp3-big-500k.txt
+___________________________________________________________________________
+
+# DEBUGGING:
 1. Version 1: 402, 404, 407 were giving incorrect results.
    
    Need to correct logic for priceHike() findMaxPrice() and findMinPrice()
@@ -96,11 +102,11 @@ DEBUGGING:
    Used long for manipulating money values internally.
    *We were missing a pair of parenthesis in toMoney() which caused int 
    to overflow and store incorrect dollar values.
-   toString() in Money didnt considered single digit cent values.
+   toString() in Money didn't considered single digit cent values.
 
 3. Version 3: correct results for all given inputs, but took long to run
    
-   Optimised by changing from TreeSet to HashSet. 
+   Optimized by changing from TreeSet to HashSet. 
    As we were unsure of Items in Hash stored as references, we used to 
    redundantly update the same Item with a helper method.
    Used subMap() for priceHike().
