@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Long Project LP3: Multidimensional search (MDS) Implementation
 
 # Team: LP101 
@@ -68,8 +67,8 @@ ___________________________________________________________________________
 +-------------------------------------------------------------------------+
 
 NOTE: 
-- Time and Memory might change, as you run the test the program on a different 
-  system, but they could be comparable to the above values.
+- Time and Memory might change, as you run the test the program on a 
+  different system, but they could be comparable to the above values.
   
   Existing Processor: Intel® Core™ i5-8250U CPU @ 1.60GHz × 8
   Memory: 7.5 GiB
@@ -102,18 +101,19 @@ ___________________________________________________________________________
    
    Changed description from LinkedList<> to HashSet<>.
    Used long for manipulating money values internally.
-   *We were missing a pair of parenthesis in toMoney() which caused int 
+   
+   We were missing a pair of parenthesis in toMoney() which caused int 
    to overflow and store incorrect dollar values.
    toString() in Money didn't considered single digit cent values.
 
 3. Version 3: correct results for all given inputs, but took long to run
    
    Optimized by changing from TreeSet to HashSet. 
-   toString() in Money didnt considered single digit cent values.
+   toString() in Money didn't considered single digit cent values.
 
 3. Version 3: correct results for all given inputs, but took long to run
    
-   Optimised by changing from TreeSet to HashSet. 
+   Optimized by changing from TreeSet to HashSet. 
    As we were unsure of Items in Hash stored as references, we used to 
    redundantly update the same Item with a helper method.
    Used subMap() for priceHike().
