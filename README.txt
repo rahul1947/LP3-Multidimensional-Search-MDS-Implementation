@@ -100,7 +100,7 @@ _______________________________________________________________________________
 1. Extract the rsn170330.zip 
 
 2. Compile: 
-	$javac rsn170330/*.java
+  $javac rsn170330/*.java
 
 3. Run:
   $java [memory: optional] rsn170330.LP3Driver [arg1] [arg2] 

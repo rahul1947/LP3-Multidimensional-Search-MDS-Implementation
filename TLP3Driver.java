@@ -1,8 +1,4 @@
-/** Driver code for testing LP3
- *  @author rbk
- */
-
-// Change to your net id
+// Driver code for testing LP3 with short results avoiding Long overflow.
 package rsn170330.lp3;
 
 import java.io.File;
