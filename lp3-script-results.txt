@@ -1,0 +1,72 @@
+
+135
+Time: 10 msec.
+Memory: 1 MB / 117 MB.
+
+32
+Time: 11 msec.
+Memory: 1 MB / 117 MB.
+
+203
+Time: 5 msec.
+Memory: 1 MB / 117 MB.
+
+426
+Time: 19 msec.
+Memory: 2 MB / 117 MB.
+
+340
+Time: 30 msec.
+Memory: 4 MB / 117 MB.
+
+6192
+Time: 44 msec.
+Memory: 11 MB / 117 MB.
+
+7982
+Time: 49 msec.
+Memory: 5 MB / 117 MB.
+
+4335
+Time: 94 msec.
+Memory: 29 MB / 117 MB.
+
+10218
+Time: 84 msec.
+Memory: 20 MB / 117 MB.
+
+56894
+Time: 85 msec.
+Memory: 18 MB / 117 MB.
+.
+39776
+Time: 396 msec.
+Memory: 99 MB / 208 MB.
+.........+
+909627
+Time: 4826 msec.
+Memory: 403 MB / 747 MB.
+.........+
+1890671
+Time: 3675 msec.
+Memory: 200 MB / 769 MB.
+.........+.........+
+1286719
+Time: 11512 msec.
+Memory: 754 MB / 1112 MB.
+.........+.........+
+101256
+Time: 16614 msec.
+Memory: 826 MB / 1395 MB.
+.........+.........+.........+
+2062306
+Time: 19551 msec.
+Memory: 914 MB / 1364 MB.
+.........+.........+.........+.........+.........+
+4913652
+Time: 26277 msec.
+Memory: 2092 MB / 2842 MB.
+.........+.........+.........+.........+.........+.........+.........+.....
+14070859
+Time: 86304 msec.
+Memory: 2552 MB / 3873 MB.
