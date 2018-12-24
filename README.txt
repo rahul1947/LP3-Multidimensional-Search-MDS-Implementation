@@ -104,11 +104,11 @@ _______________________________________________________________________________
 
 3. Run:
   $java [memory: optional] rsn170330.LP3Driver [arg1] [arg2] 
-	$java rsn170330.LP3Driver test-lp3/lp3-t16.txt false
-	
-	OR
-	$java [memory: optional] rsn170330.TLP3Driver [arg1] [arg2] [arg3: optional]
-	$java -Xms4g rsn170330.LP3Driver test-lp3/lp3-t17.txt false x
+  $java rsn170330.LP3Driver test-lp3/lp3-t16.txt false
+  
+  OR 
+  $java [memory: optional] rsn170330.TLP3Driver [arg1] [arg2] [arg3: optional]
+  $java -Xms4g rsn170330.LP3Driver test-lp3/lp3-t17.txt false x
 	
 Note:
 [memory: optional] -Xms3g and -Xms4g can be used only for files 
