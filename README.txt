@@ -13,12 +13,12 @@ _______________________________________________________________________________
 
 1. For each product/ item, we've made a class called Item consisting - 
    class Item { Long id, Money price, HashSet<Long> description }
-   Why HashSet - to avoid duplicates and fast modifications
+   Why HashSet? - to avoid duplicates and fast modifications
 
 2. We've used a TreeMap<Long, <Item>> which maps an id to it's Item.
    
    We could've also used TreeSet, but wanted to go with TreeMap, as it 
-   would not make a huge difference.
+   does not make a huge difference.
    
    TreeMap<Long, <Item>> pTree;
 
@@ -26,8 +26,9 @@ _______________________________________________________________________________
    set of all such Items containing that description. 
    
    Why HashSet? - we initially used TreeSet having our own natural ordering 
-   on price and id, but it turned out to be less efficient. We changed to 
-   HashSet as we decided to go without ordering. 
+   on price and id, but it turned out to be less efficient, because price was 
+   changing a lot of times. We changed to HashSet, ordered only on id, as we 
+   decided to go without ordering. 
 
    HashMap<Long, HashSet<Item>> dMap;
 
@@ -41,23 +42,23 @@ _______________________________________________________________________________
 +-------------------------------------------------------------------------+
 | File    | # Operations |   Output*  | Time (mSec) | Memory (used/avail) |
 |-------------------------------------------------------------------------|
-| lp3-t1  |            7 |        135 |          10 |       1 MB / 117 MB |
+| lp3-t01 |            7 |        135 |          10 |       1 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t2  |           10 |         32 |          11 |       1 MB / 117 MB |
+| lp3-t02 |           10 |         32 |          11 |       1 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t3  |           12 |        203 |           5 |       1 MB / 117 MB |
+| lp3-t03 |           12 |        203 |           5 |       1 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t4  |           57 |        426 |          19 |       2 MB / 117 MB |
+| lp3-t04 |           57 |        426 |          19 |       2 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t5  |          100 |        340 |          30 |       4 MB / 117 MB |
+| lp3-t05 |          100 |        340 |          30 |       4 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t6  |          607 |       6192 |          44 |      11 MB / 117 MB |
+| lp3-t06 |          607 |       6192 |          44 |      11 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t7  |         1000 |       7982 |          49 |       5 MB / 117 MB |
+| lp3-t07 |         1000 |       7982 |          49 |       5 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t8  |         1000 |       4335 |          94 |      29 MB / 117 MB |
+| lp3-t08 |         1000 |       4335 |          94 |      29 MB / 117 MB |
 |-------------------------------------------------------------------------|
-| lp3-t9  |         1203 |     10 218 |          84 |      20 MB / 117 MB |
+| lp3-t09 |         1203 |     10 218 |          84 |      20 MB / 117 MB |
 |-------------------------------------------------------------------------|
 | lp3-t10 |         5000 |     56 894 |          85 |      18 MB / 117 MB |
 |-------------------------------------------------------------------------|
@@ -91,8 +92,7 @@ NOTE:
   $ ./lp3-script.sh > lp3-script-results.txt
 
 - You might need to allocate sufficient memory for the test programs like 
-  for lp3-t17 and lp3-t18. We allocated 4 GBs for the above run.
-
+  for lp3-t17 (3 GiB) and lp3-t18 (4 GiB).
 _______________________________________________________________________________
 
 # How to Run:
@@ -103,12 +103,12 @@ _______________________________________________________________________________
 	$javac rsn170330/*.java
 
 3. Run:
-    $java [memory: optional] rsn170330.LP3Driver [arg1] [arg2] 
+  $java [memory: optional] rsn170330.LP3Driver [arg1] [arg2] 
 	$java rsn170330.LP3Driver test-lp3/lp3-t16.txt false
 	
 	OR
-	$java [optional] rsn170330.TLP3Driver [arg1] [arg2] [arg3]
-	$java -Xms4g rsn170330.LP3Driver test-lp3/lp3-t17.txt false x<or any word>
+	$java [memory: optional] rsn170330.TLP3Driver [arg1] [arg2] [arg3: optional]
+	$java -Xms4g rsn170330.LP3Driver test-lp3/lp3-t17.txt false x
 	
 Note:
 [memory: optional] -Xms3g and -Xms4g can be used only for files 
@@ -118,25 +118,26 @@ Note:
 
 [arg2] keep true when you need output in verbose, otherwise false
 
-[arg3: optional] if present prints '.' after every 10k operations and '+' 
-  after every 100k lines, otherwise no '.' and '+'. Maybe used for debugging. 
+[arg3: optional] if arg3 present prints '.' after every 10k operations and '+' 
+  after every 100k lines, otherwise no '.' and '+'. Can be used for debugging. 
 _______________________________________________________________________________
 
 # DEBUGGING:
 
-1. Version 1: 402, 404, 407 were giving incorrect results.
-   
+1. Version 1: t03, t07, t10 were giving incorrect results. 
    Need to correct logic for priceHike() findMaxPrice() and findMinPrice()
 
-2. Version 2: correct Output for 401-420, but incorrect for lp3-big-100k
+2. Version 2: correct Output for files lp3-t01 to lp3-t11, but incorrect for 
+   lp3-t12.txt
    
    Changed description from LinkedList<> to HashSet<>.
    Used long for manipulating money values internally.
+   
    *We were missing a pair of parenthesis in toMoney() which caused int 
    to overflow and store incorrect dollar values.
    toString() in Money didn't considered single digit cent values.
 
-3. Version 3: correct results for all given inputs, but took long to run
+3. Version 3: correct results for all given inputs, but took too long to run
    
    Optimized by changing from TreeSet to HashSet. 
    
