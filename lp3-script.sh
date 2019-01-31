@@ -1,3 +1,5 @@
+#! /bin/bash
+
 java rsn170330.TLP3Driver lp3-test/lp3-t01.txt false x
 java rsn170330.TLP3Driver lp3-test/lp3-t02.txt false x
 java rsn170330.TLP3Driver lp3-test/lp3-t03.txt false x
@@ -16,3 +18,5 @@ java rsn170330.TLP3Driver lp3-test/lp3-t15.txt false x
 java rsn170330.TLP3Driver lp3-test/lp3-t16.txt false x
 java -Xms3g rsn170330.TLP3Driver lp3-test/lp3-t17.txt false x
 java -Xms4g rsn170330.TLP3Driver lp3-test/lp3-t18.txt false x
+
+exit 0
