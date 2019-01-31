@@ -91,7 +91,7 @@ INPUT SPECIFICATION:
    parameters needed for that operation (separated by spaces). 
 
    Lines with Insert operation will have a "0" at the end, that is not part of 
-   the name.  The output is a single number, which is the sum of the following 
+   the name. The output is a single number, which is the sum of the following 
    values obtained by the algorithm as it processes the input.
 
 
@@ -134,13 +134,13 @@ _______________________________________________________________________________
 
 2. We've used a TreeMap<Long, <Item>> which maps an id to it's Item.
    
-   We could've also used TreeSet, but wanted to go with TreeMap, as it 
-   does not make a huge difference.
+   We could've also used TreeSet, but wanted to go with TreeMap, as it does 
+   not make a huge difference.
    
    TreeMap<Long, <Item>> pTree;
 
-3. We've used a HashMap<Long, HashSet<Item>> which maps a description to a 
-   set of all such Items containing that description. 
+3. We've used a HashMap<Long, HashSet<Item>> which maps a description to a set 
+   of all such Items containing that description. 
    
    Why HashSet? - we initially used TreeSet having our own natural ordering 
    on price and id, but it turned out to be less efficient, because price was 
@@ -199,8 +199,8 @@ _______________________________________________________________________________
 * These are the results obtained using TLP3Driver as the Driver code. 
 
 NOTE: 
-- Time and Memory might change, as you run the test the program on a 
-  different system, but they could be comparable to the above values.
+- Time and Memory might change, as you run the test the program on a different 
+  system, but they could be comparable to the above values.
   
   Existing Processor: Intel® Core™ i5-8250U CPU @ 1.60GHz × 8
   Memory: 7.5 GiB
@@ -208,11 +208,11 @@ NOTE:
   Refer lp3-script-results.txt as obtained from 
   $ ./lp3-script.sh > lp3-script-results.txt
 
-- You might need to allocate sufficient memory for the test programs like 
-  for lp3-t17 (3 GiB) and lp3-t18 (4 GiB).
+- You might need to allocate sufficient memory for the test programs like for 
+  lp3-t17 (3 GiB) and lp3-t18 (4 GiB).
 _______________________________________________________________________________
 
-# How to Run:
+# HOW TO RUN:
 
 1. Extract the rsn170330.zip 
 
@@ -221,11 +221,11 @@ _______________________________________________________________________________
 
 3. Run:
   $java [memory: optional] rsn170330.LP3Driver [arg1] [arg2] 
-  $java rsn170330.LP3Driver test-lp3/lp3-t16.txt false
+  $java rsn170330.LP3Driver lp3-test/lp3-t16.txt false
   
   OR 
   $java [memory: optional] rsn170330.TLP3Driver [arg1] [arg2] [arg3: optional]
-  $java -Xms4g rsn170330.LP3Driver test-lp3/lp3-t17.txt false x
+  $java -Xms4g rsn170330.LP3Driver lp3-test/lp3-t17.txt false x
 	
 Note:
 [memory: optional] -Xms3g and -Xms4g can be used only for files 
