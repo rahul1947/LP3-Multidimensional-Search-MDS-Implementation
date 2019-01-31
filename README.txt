@@ -1,9 +1,14 @@
 # Long Project LP3: Multidimensional search (MDS) Implementation
 
 # Team: LP101 
- * Rahul Nalawade (https://github.com/rahul1947) rsn170330@utdallas.edu 
- * Prateek Sarna (https://github.com/prateek5795) pxs180012@utdallas.edu 
- * Bhavish Khanna Narayanan (https://github.com/bhavish14) bxn170002@utdallas.edu 
+ * Rahul Nalawade (https://github.com/rahul1947) 
+   rsn170330@utdallas.edu 
+
+ * Prateek Sarna (https://github.com/prateek5795) 
+   pxs180012@utdallas.edu 
+
+ * Bhavish Khanna Narayanan (https://github.com/bhavish14) 
+   bxn170002@utdallas.edu 
 
 # End Date: 
  * Sunday, November 04, 2018
