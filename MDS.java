@@ -1,22 +1,22 @@
 package rsn170330.lp3;
 
-/**
- * CS 5V81.001: Implementation of Data Structures and Algorithms 
- * Long Project LP3: Multidimensional search (MDS) Implementation
- * Team: LP101
- * @author Rahul Nalawade (rsn170330)
- * @author Prateek Sarna (pxs180012)
- * @author Bhavish Khanna Narayanan (bxn170002)
- * 
- */
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-// Main class containing required implementation of MDS
+/**
+ * CS 5V81.001: Implementation of Data Structures and Algorithms 
+ * Long Project LP3: Multidimensional search (MDS) Implementation
+ * 
+ * Team: LP101
+ * @author Rahul Nalawade (rsn170330)
+ * @author Prateek Sarna (pxs180012)
+ * @author Bhavish Khanna Narayanan (bxn170002)
+ * 
+ * @date November 04, 2018
+ */
 public class MDS {
 	
 	// pTree: maps id to it's product
@@ -37,8 +37,11 @@ public class MDS {
 		size = 0;
 	}
 	
+	//------------------------------ ITEM -----------------------------------//
+	
 	// Information about each Item
 	static class Item {
+		
 		// using wrapper class for inbuilt-comparison
 		private Long id;  
 		private HashSet<Long> description;
@@ -79,9 +82,10 @@ public class MDS {
 					+ description.toString() + "}";
 		}
 	}
-
-	// Public methods of MDS. Do not change their signatures.
-	// -----------------------------------------------------------------------
+	
+	//------------------------- PUBLIC METHODS ------------------------------//
+	
+	// Do not change the signatures these methods.
 	
 	/**
 	 * insert(id, price, list): 
@@ -237,7 +241,9 @@ public class MDS {
 	
 	
 	/**
-	 * find(id): return price of item with given id (or 0, if not found).
+	 * find(id): 
+	 * Return price of item with given id (or 0, if not found).
+	 * 
 	 * @param id the id of the item
 	 * @return price of the item, if exists, else 0
 	 */
@@ -252,7 +258,8 @@ public class MDS {
 	}
 
 	/**
-	 * delete(id): delete item from storage. 
+	 * delete(id): 
+	 * Delete item from the storage. 
 	 * 
 	 * @param id the id of the Item to be deleted
 	 * @return Returns the sum of the long integers that are in the 
@@ -291,9 +298,10 @@ public class MDS {
 
 	
 	/**
-	 * findMinPrice(d): given a long integer, find items whose description 
-	 * contains that number (exact match with one of the long integers in 
-	 * the item's description), and return lowest price of those items.
+	 * findMinPrice(d): 
+	 * Given a long integer, find items whose description contains that number 
+	 * (exact match with one of the long integers in the item's description), 
+	 * and return lowest price of those items.
 	 * 
 	 * @param d the description
 	 * @return minimum price if that description is present, else 0 (Money).
@@ -316,8 +324,9 @@ public class MDS {
 	}
 	
 	/**
-	 * findMaxPrice(d): given a long integer, find items whose description 
-	 * contains that number, and return highest price of those items.
+	 * findMaxPrice(d): 
+	 * Given a long integer, find items whose description contains that 
+	 * number, and return highest price of those items.
 	 * 
 	 * @param d the description
 	 * @return maximum price if that description is present, else 0 (Money).
@@ -341,15 +350,16 @@ public class MDS {
 
 	
 	/**
-	 * findPriceRange(d, low, high): given a long integer d, find the 
-	 * number of items whose description contains d, and in addition, 
-	 * their prices fall within the given range, [low, high]. 
+	 * findPriceRange(d, low, high): 
+	 * Given a long integer d, find the number of items whose description 
+	 * contains d, and in addition, their prices fall within the given range, 
+	 * [low, high]. 
 	 * 
 	 * @param d the description
 	 * @param low the lower limit of price
 	 * @param high the upper limit of price
-	 * @return count of Items whose prices are in [low, high] 
-	 *    and has description d
+	 * @return count of Items whose prices are in [low, high] and has 
+	 * description d
 	 */
 	public int findPriceRange(long d, Money low, Money high) {
 		
@@ -376,8 +386,9 @@ public class MDS {
 	}
 
 	/**
-	 * priceHike(low, high, rate): increases the price of every product, 
-	 * whose id is in the range [low, high] by rate%. 
+	 * priceHike(low, high, rate): 
+	 * Increases the price of every product, whose id is in the range 
+	 * [low, high] by rate%. 
 	 * 
 	 * Discard any fractional pennies in the new prices of items. 
 	 * 
@@ -419,7 +430,8 @@ public class MDS {
 	}
 	
 	/**
-	 * Increments price of item(id) by rate%.
+	 * Helper method: Increments price of item(id) by rate%. 
+	 * 
 	 * @param id the id of the item
 	 * @param rate the rate by which price increases
 	 * @return the incremented price in long format
@@ -438,7 +450,9 @@ public class MDS {
 	}
 	
 	/**
-	 * Converts money from long format to Money. COULD BE PART of MONEY
+	 * Helper method: Converts money from long format to Money. 
+	 * COULD BE PART of MONEY?
+	 * 
 	 * @param m the input money in long
 	 * @return equivalent Money
 	 */
@@ -451,7 +465,9 @@ public class MDS {
 	}
 	
 	/**
-	 * Converts money from Money to long format. COULD BE PART of MONEY
+	 * Helper method: Converts money from Money to long format. 
+	 * COULD BE PART of MONEY?
+	 * 
 	 * @param m input money in Money
 	 * @return equivalent money in long
 	 */
@@ -465,15 +481,14 @@ public class MDS {
 	}
 	
 	/**
-	 * removeNames(id, list): Remove elements of list from the 
-	 * description of id. It is possible that some of the items in 
-	 * the list are not in the id's description. 
+	 * removeNames(id, list): 
+	 * Remove elements of list from the description of id. It is possible that 
+	 * some of the items in the list are not in the id's description. 
 	 * 
 	 * @param id the Item(id) whose Names is to be removed
 	 * @param list the Names to be removed
-	 * @return Return the sum of the numbers that are actually deleted 
-	 * from the description of id. 
-	 * Return 0 if there is no such id.
+	 * @return Return the sum of the numbers that are actually deleted from 
+	 * the description of id. Return 0 if there is no such id.
 	 */
 	public long removeNames(long id, java.util.List<Long> list) {
 		
@@ -507,6 +522,13 @@ public class MDS {
 		
 		return sum;
 	}
+	
+	// Returns number of Items in the storage.
+	public long size() {
+		return size;
+	}
+	
+	//------------------------ PRINTING METHODS -----------------------------//
 	
 	/**
 	 * Private method used for debugging the code.
@@ -544,11 +566,9 @@ public class MDS {
 		}
 	}
 	
-	public long size() {
-		return size;
-	}
+	//------------------------------ MONEY ----------------------------------//
 
-	// Do not modify the Money class in a way that breaks LP3Driver.java
+	// Do not modify the Money class in a way that breaks T/LP3Driver.java
 	public static class Money implements Comparable<Money> { 
 		
 		long d; // dollars
@@ -592,35 +612,37 @@ public class MDS {
 			return c; 
 		}
 		
+		// NOTE: 34.6 is 34 dollars and 6 cents NOT 60 cents
 		public String toString() { 
 			//if (c < 10)
 			//	return d + ".0" + c;
 			return d + "." + c; 
 		}
-
+		
 		@Override
 		public int compareTo(Money other) {
-			// Complete this, if needed: Yeah for sure!
-
-			if (this.d < other.d) 
+			
+			if (this.d < other.d) {
 				return -1;
-			
-			else if (this.d > other.d) 
+			}
+			else if (this.d > other.d) { 
 				return 1;
-			
+			}
 			// When we have exact same dollar values
 			else {
 				
-				if (this.c < other.c) 
+				if (this.c < other.c) { 
 					return -1;
-				
-				else if (this.c > other.c) 
+				}
+				else if (this.c > other.c) { 
 					return 1;
-				
+				}
 				// same exact Money values 
-				else 
+				else { 
 					return 0;
+				}
 			}
 		}
 	}
+	//----------------------------- THE END ---------------------------------//
 }
