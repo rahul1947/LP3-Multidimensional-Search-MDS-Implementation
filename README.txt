@@ -22,8 +22,8 @@ _______________________________________________________________________________
 
    The search engine allows users to specify attributes of products that they 
    are seeking and shows products that have most of those attributes. To make 
-   the search efficient, the data is organized using appropriate data 
-   structures, such as balanced trees. 
+   the search efficient, the data is organized using appropriate data structures, 
+   such as balanced trees. 
 
    But, if products are organized by Name, how can search by price implemented 
    efficiently? 
